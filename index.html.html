@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://www.example.com/background.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            border: 2px solid #0e28d6;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(63, 12, 215, 0.8);
+            box-shadow: 0 0 15px rgba(190, 12, 12, 0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #000000;
+            margin-bottom: 20px;
+            font-family: 'Cursive', sans-serif;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        input {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #430b1e;
+            border-radius: 5px;
+            background: #fbfbfb;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #0b18d9;
+            color: #121010;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #1ba9d8;
+        }
+        .error {
+            color: rgb(14, 39, 197);
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>acesso criado pra você</h1>
+        <form id="loginForm">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" placeholder="Seu nome" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Sua senha" required>
+            <button type="submit">Entrar</button>
+            <div id="error" class="error"></div>
+        </form>
+    </div>
+
+    <script>
+        const validUsername = 'liviaehelen'; // Nome de usuário correto
+        const validPassword = 'amor2024'; // Senha correta
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = '.html'; // Redireciona para a tela secundária
+            } else {
+                document.getElementById('error').textContent = 'Usuário ou senha inválidos!';
+            }
+        });
+    </script>
+</body>
+</html>
